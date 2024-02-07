@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    height: auto;
+    background-color: #548687;
+    text-align: center;
+    width: auto;
+
+
+}
+.body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    /* Set width of the scrollbar */
+}
+
+/* Scrollbar track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* Change track color */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #d4cbcb;
+    /* Change scrollbar handle color */
+}
+
+/*Style for the Winner */
+
+.msg-container {
+    height: 90vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
+
+}
+
+#message {
+    font-size: 5rem;
+    color: goldenrod;
+    margin: 2rem 0;
+}
+
+.msg {
+    font-size: 2rem;
+    color: cornsilk;
+    text-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+}
+
+#new-game-btn {
+    padding: 1rem 1.5rem;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: #191913;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease;
+
+}
+
+h1 {
+    font-size: 3rem;
+    color: #191913;
+    text-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    margin: 2rem 0;
+}
+
+.container {
+    /* height: 70vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8vmin;
+}
+
+.game:first-child {
+    margin-bottom: 20vmin;
+}
+
+.game:last-child {
+    margin-bottom: 5vmin;
+}
+
+.game {
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+}
+
+.box {
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    font-size: 8vmin;
+    color: #b0413e;
+    background-color: lightblue;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+}
+
+.game:has(.winbox) .box:hover {
+    transform: scale(1);
+    background-color: lightblue;
+
+}
+
+.box:hover {
+    transform: scale(1.1);
+    background-color: #3397c5;
+}
+
+.winbox:hover {
+    transform: scale(1.1) !important;
+    background-color: #3397c5;
+}
+
+#reset-btn {
+    padding: 1rem 1.5rem;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: #191913;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease;
+    margin: 1rem;
+}
+
+.hide {
+    display: none !important;
+}
+
+.winbox {
+    background-color: green !important;
+}
+
+/* .history {
+    display: none;
+} */
+
+.history {
+    width: min-content;
+    text-wrap: nowrap;
+    padding: 1rem 1.5rem;
+    display: inline !important;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: #191913;
+    color: #fff;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    margin: 1rem;
+    position: relative;
+}
+
+.history::before {
+    position: absolute;
+    width: 200%;
+    content: "";
+    height: 0.25rem;
+    background-color: #191913;
+    top: 50%;
+    left: -10%;
+    z-index: -1;
+    transform: translateX(-100%);
+}
+
+.history::after {
+    position: absolute;
+    width: 200%;
+    content: "";
+    height: 0.25rem;
+    background-color: #191913;
+    top: 50%;
+    right: -10%;
+    z-index: -1;
+    transform: translateX(100%);
+}
+.history-winner{
+    color: goldenrod;
+    text-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    width: min-content;
+    text-wrap: nowrap;
+    padding: 1rem 1.5rem;
+    display: inline !important;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: #191913;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+
+}
+
+
+/* //add media query */
+
+
+@media only screen and (max-width: 768px) {
+    .container {
+        gap: 10vmin; /* Adjusted gap for smaller screens */
+    }
+
+    .game {
+        height: 50vmin;
+        width: 50vmin;
+    }
+
+    .box {
+        height: 15vmin;
+        width: 15vmin;
+        font-size: 6vmin;
+    }
+}
+
+
+
